@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Produk = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const Data = [
     {
       id: 1,
@@ -28,6 +33,7 @@ const Produk = () => {
       className="container py-3"
       style={{ fontFamily: "'Signika Negative', sans-serif" }}
       id="produk"
+      data-aos="fade-up"
     >
       <h1 className="text-center">
         <strong>Produk</strong>

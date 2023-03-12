@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FAQ = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const Data = [
     {
       id: 1,
@@ -32,6 +37,7 @@ const FAQ = () => {
     <div
       className="container my-4"
       style={{ fontFamily: "'Signika Negative', sans-serif" }}
+      data-aos="fade-up"
     >
       <div>
         <div className="row my-4">

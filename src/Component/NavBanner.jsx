@@ -5,7 +5,7 @@ import Navibar from "./NavBar";
 const NavBanner = () => {
   return (
     <div
-      className="container-fluid"
+      className="container-fluid "
       style={{ background: "linear-gradient(purple,#A31ACB)" }}
     >
       <Navibar />

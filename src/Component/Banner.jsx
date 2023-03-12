@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Banner = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="container-fluid">
-      <div className="row py-5">
+      <div className="row py-5" data-aos="fade-up">
         <div className="col-md text-center my-3">
           <h4
             style={{
