@@ -7,7 +7,10 @@ const Banner = () => {
     AOS.init();
   }, []);
   return (
-    <div className="container-fluid">
+    <div
+      className="container-fluid"
+      style={{ backgroundImage: "url(./assets/stars.png)" }}
+    >
       <div className="row py-5" data-aos="fade-up">
         <div className="col-md text-center my-3">
           <h4

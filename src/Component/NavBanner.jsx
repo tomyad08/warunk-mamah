@@ -6,7 +6,9 @@ const NavBanner = () => {
   return (
     <div
       className="container-fluid "
-      style={{ background: "linear-gradient(purple,#A31ACB)" }}
+      style={{
+        background: "linear-gradient(purple,purple, purple,#A31ACB)",
+      }}
     >
       <Navibar />
       <Banner />
