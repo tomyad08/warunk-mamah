@@ -7,14 +7,20 @@ import NavBanner from "./Component/NavBanner";
 import Produk from "./Component/Product";
 import FAQ from "./Component/FAQ";
 import Kontak from "./Component/Footer";
+import { Provider } from "react-redux";
+import { store } from "./Lib/Store";
+import Sembako from "./Sembako/Sembako";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <NavBanner />
-    <Produk />
-    <FAQ />
-    <Kontak />
+    <Provider store={store}>
+      <NavBanner />
+      <Produk />
+      <FAQ />
+      <Kontak />
+      <Sembako />
+    </Provider>
   </React.StrictMode>
 );
 

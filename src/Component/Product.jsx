@@ -1,11 +1,31 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Papa from "papaparse";
+import { useDispatch, useSelector } from "react-redux";
+import { addSembako } from "../Lib/ProductSlice";
 
 const Produk = () => {
+  const products = useSelector((state) => state.product.sembako[0]);
+  const dispatch = useDispatch();
   useEffect(() => {
     AOS.init();
   }, []);
+  useEffect(() => {
+    Papa.parse(
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vS537UXCmGGlQb_1UDbB2H3EzGhFRanDQvVBtJ0TxUn_Mrab8-3oU9Bbmm43eup-0yxszt1SnApSEv4/pub?output=csv",
+      {
+        download: true,
+        header: true,
+        complete: (value) => {
+          dispatch(addSembako(value.data));
+          console.log(value.data);
+        },
+      }
+    );
+  }, [dispatch]);
+  console.log(products);
+
   const Data = [
     {
       id: 1,

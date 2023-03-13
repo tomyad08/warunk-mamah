@@ -17,6 +17,7 @@ const Banner = () => {
               lineHeight: "40px",
               textShadow: "4px 2px black",
               color: "#FFCC00",
+              
             }}
           >
             Warunk
