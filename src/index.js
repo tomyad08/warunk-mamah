@@ -3,23 +3,16 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import reportWebVitals from "./reportWebVitals";
-import NavBanner from "./Component/NavBanner";
-import Produk from "./Component/Product";
-import FAQ from "./Component/FAQ";
-import Kontak from "./Component/Footer";
 import { Provider } from "react-redux";
 import { store } from "./Lib/Store";
-import Sembako from "./Sembako/Sembako";
+import Sembako from "./Pages/Sembako";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <NavBanner />
-      <Produk />
-      <FAQ />
-      <Kontak />
-      <Sembako />
+      <App />
     </Provider>
   </React.StrictMode>
 );

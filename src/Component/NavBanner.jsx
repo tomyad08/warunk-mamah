@@ -10,7 +10,6 @@ const NavBanner = () => {
         background: "linear-gradient(purple,purple, purple,#A31ACB)",
       }}
     >
-      <Navibar />
       <Banner />
     </div>
   );

@@ -1,21 +1,40 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navibar = () => {
   const [kondisi, setKondisi] = useState(false);
   return (
-    <div className="container-fluid" style={{ color: "white" }}>
+    <div
+      className="container-fluid"
+      style={{
+        color: "white",
+        backgroundColor: "purple",
+      }}
+    >
       <div className="row">
-        <div className="col px-3 pt-3">
-          <h2
-            style={{
-              fontFamily: "'Signika Negative', sans-serif",
-              fontSize: "25px",
-            }}
-          >
-            <strong>Warunk Ibu Titin</strong>
-          </h2>
+        <div className=" col py-3" id="sandwich">
+          <img
+            src="./assets/sandwich1.png"
+            style={{ width: "40px" }}
+            alt=" "
+            onClick={() => setKondisi(!kondisi)}
+          />
         </div>
-        <div className="col p-3">
+        <div className="col-7 pt-2">
+          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <h2
+              style={{
+                fontFamily: "'Signika Negative', sans-serif",
+                fontSize: "25px",
+                marginLeft: "20px",
+                paddingTop: "10px",
+              }}
+            >
+              <strong>Warunk Ibu Titin</strong>
+            </h2>
+          </Link>
+        </div>
+        <div className="col py-3">
           <div className="float-end">
             <a
               href="#produk"
@@ -68,13 +87,15 @@ const Navibar = () => {
                 Kontak
               </span>
             </a>
-            <span className="mx-2 float-end" id="sandwich">
-              <img
-                src="./assets/fi_menu.png"
-                style={{ width: "160%" }}
-                alt=" "
-                onClick={() => setKondisi(!kondisi)}
-              />
+            <span>
+              <Link to="/pesanan">
+                <img
+                  src="./assets/keranjang1.png"
+                  style={{ width: "60px" }}
+                  className="float-end"
+                  alt=" "
+                />
+              </Link>
             </span>
           </div>
         </div>
