@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Papa from "papaparse";
-import { addSembako } from "../Lib/ProductSlice";
+import { addAlatTulis } from "../Lib/ProductSlice";
 import Fungsi from "../Component/FungsiTampilan";
 
-const Sembako = () => {
-  const products = useSelector((state) => state.product.sembako[0]);
+const AlatTulis = () => {
+  const products = useSelector((state) => state.product.alatTulis[0]);
   const [nama, setNama] = useState(" ");
   const [filter, setFilter] = useState(" ");
   const dispatch = useDispatch();
 
   useEffect(() => {
     Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vS537UXCmGGlQb_1UDbB2H3EzGhFRanDQvVBtJ0TxUn_Mrab8-3oU9Bbmm43eup-0yxszt1SnApSEv4/pub?output=csv",
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQsmUeg-tr5uzW5bhuAJDUfhEnyyPMus-hsQl6cTkwIuytiKaEnsoEreCxg4B9n0o9tN1sxuKyQXfdZ/pub?output=csv",
       {
         download: true,
         header: true,
         complete: (value) => {
-          dispatch(addSembako(value.data));
+          dispatch(addAlatTulis(value.data));
         },
       }
     );
@@ -30,7 +30,7 @@ const Sembako = () => {
         className="text-center pt-4"
         style={{ fontFamily: "'Signika Negative', sans-serif" }}
       >
-        <strong>Sembako</strong>
+        <strong>Alat Tulis</strong>
       </h1>
       <div className="d-flex justify-content-center mb-5">
         <input
@@ -53,10 +53,8 @@ const Sembako = () => {
           <option value=" " selected>
             Filter
           </option>
-          <option value="Bahan Makanan">Bahan Makanan</option>
-          <option value="Pembersih">Pembersih</option>
-          <option value="Kesehatan">Kesehatan</option>
-          <option value="Kosmetik">Kosmetik</option>
+          <option value="Alat Tulis">Alat Tulis</option>
+          <option value="Pramuka">Pramuka</option>
         </select>
       </div>
       {products ? (
@@ -86,4 +84,4 @@ const Sembako = () => {
     </div>
   );
 };
-export default Sembako;
+export default AlatTulis;

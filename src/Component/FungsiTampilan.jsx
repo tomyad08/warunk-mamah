@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
@@ -42,23 +42,26 @@ const Fungsi = (props) => {
     setShow(false);
   };
   const hargaTotal = count * data.harga;
+
   return (
     <div className="container-fluid">
       {Data ? (
         <div className="row justify-content-center">
           {Data.map((value) => (
             <div
-              className="col-md-2 col-5 mx-1"
+              className="col-md-2 col-5 mx-1 "
               onClick={() => handleShow(value)}
+              key={value.id}
             >
-              <div>
-                <img
-                  src={value.foto}
-                  alt=" "
-                  width="100%"
-                  className="border border-0 rounded-3"
-                  id="gambar"
-                />
+              <div
+                className="border border-0 rounded-2 mb-2"
+                style={{
+                  zIndex: "4",
+                  backgroundColor: "#ECF2FF",
+                  overflow: "hidden",
+                }}
+              >
+                <img src={value.foto} alt=" " width="100%" id="gambar" />
                 <h5
                   style={{
                     fontFamily: "'Signika Negative', sans-serif",
@@ -75,7 +78,7 @@ const Fungsi = (props) => {
                     textAlign: "center",
                   }}
                 >
-                  Rp. {value.harga}
+                  Rp. {value.harga}/pcs
                 </p>
               </div>
             </div>

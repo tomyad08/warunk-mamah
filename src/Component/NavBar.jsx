@@ -5,14 +5,14 @@ const Navibar = () => {
   const [kondisi, setKondisi] = useState(false);
   return (
     <div
-      className="container-fluid"
+      className="container-fluid pb-1"
       style={{
         color: "white",
         backgroundColor: "purple",
       }}
     >
       <div className="row">
-        <div className=" col py-3" id="sandwich">
+        <div className=" col pt-3" id="sandwich">
           <img
             src="./assets/sandwich1.png"
             style={{ width: "40px" }}
@@ -25,8 +25,8 @@ const Navibar = () => {
             <h2
               style={{
                 fontFamily: "'Signika Negative', sans-serif",
-                fontSize: "25px",
-                marginLeft: "20px",
+                fontSize: "20px",
+                marginLeft: "30px",
                 paddingTop: "10px",
               }}
             >

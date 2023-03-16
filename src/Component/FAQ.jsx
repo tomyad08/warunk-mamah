@@ -10,9 +10,9 @@ const FAQ = () => {
   const Data = [
     {
       id: 1,
-      pertanyaan: "Gimana cara pesennya?",
+      pertanyaan: "Gimana cara pesannya?",
       jawaban:
-        "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+        "Kamu bisa klik kartu produk dan tentukan jumlah pembelian.  Setelah menentukan jumlah pembelian, silahkan untuk klik logo keranjang yang ada di pojok kanan atas.",
     },
     {
       id: 2,
@@ -22,15 +22,15 @@ const FAQ = () => {
     },
     {
       id: 3,
-      pertanyaan: "Berapa harga outfit lu?",
+      pertanyaan: "Kapan barang akan di kirim?",
       jawaban:
-        "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+        "Untuk pemesanan pukul 16.01-05.00 WIB, barang akan dikirim jam 07.00 WIB. Pemesanan pukul 07.01-11.00 WIB, barang akan dikirim jam 13.00 WIB. Pemesanan pukul 13.01-15.00 WIB, barang akan dikirim jam 16.00 WIB ",
     },
     {
       id: 4,
-      pertanyaan: "Siapa sih ini?",
+      pertanyaan: "Kalau ada pertanyaan, kemana saya harus bertanya?",
       jawaban:
-        "Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat minim minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.",
+        "Dengan senang hati, kamu bisa klik logo whatsApp di pojok kanan bawah.",
     },
   ];
   return (
@@ -51,7 +51,7 @@ const FAQ = () => {
             <div>
               <Accordion>
                 {Data.map((value) => (
-                  <Accordion.Item eventKey={value.id}>
+                  <Accordion.Item eventKey={value.id} key={value.id}>
                     <Accordion.Header>{value.pertanyaan}</Accordion.Header>
                     <Accordion.Body>{value.jawaban}</Accordion.Body>
                   </Accordion.Item>
@@ -64,18 +64,13 @@ const FAQ = () => {
             <h1 className="text-center ">
               <strong>Lokasi Toko Offline</strong>
             </h1>
-            <p style={{ textAlign: "justify" }}>
-              Jika dirasa ingin datang langsung ke toko kami, silahkan klik
-              tampilan google maps di bawah ini.
-            </p>
+            <p style={{ textAlign: "justify" }}>Toko offline kami:</p>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3961.2287564899066!2d108.72455841477257!3d-6.86316609504036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTEnNDcuNCJTIDEwOMKwNDMnMzYuMyJF!5e0!3m2!1sid!2sid!4v1678550034094!5m2!1sid!2sid"
               width="100%"
               height="210"
               style={{ border: "0" }}
-              allowfullscreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

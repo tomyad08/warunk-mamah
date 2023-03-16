@@ -1,36 +1,35 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Kontak from "../Component/Footer";
 
 const Pesanan = () => {
   const products = useSelector((state) => state.product.orders);
   const [nama, setNama] = useState("");
   const [alamat, setAlamat] = useState("");
+  const [keterangan, setKeterangan] = useState(" ");
 
   const numbers = products.map((data) => data.total);
   const sum = numbers.reduce(function (result, item) {
     return result + item;
   }, 0);
-  console.log(nama);
-  console.log(alamat);
+
   let pesanan = [];
-  const DataPemesanan = {
-    nama: nama,
-    alamat: alamat,
-    pesanan: pesanan,
-  };
   return (
     <div
-      className="container-fluid"
-      style={{ fontFamily: "'Signika Negative', sans-serif", width: "400px" }}
+      className="container-fluid py-5"
+      style={{
+        fontFamily: "'Signika Negative', sans-serif",
+        width: "350px",
+      }}
     >
       <div>
-        <h1 className="text-center mt-5">Pesanan</h1>
+        <h1 className="text-center">Pesanan</h1>
         {products.map((value) => (
           <>
             <div style={{ display: "none" }}>
               {pesanan.push(
-                `Pesan= ${value.nama}, Jumlah= ${value.jumlah}, Total= ${value.total} ||`
+                `    pesan= ${value.nama}, jumlah= ${value.jumlah} pcs, total= Rp.${value.total} ||    `
               )}
             </div>
             <div className="row px-2 justify-content-around">
@@ -60,29 +59,38 @@ const Pesanan = () => {
           <h5>Rp. {sum}</h5>
         </div>
       </div>
-      <p style={{ textAlign: "justify" }}>
-        Silahkan untuk konfirmasi nama dan alamat ataupun patokan tempat sebelum
-        klik pesanan selesai
+      <p style={{ textAlign: "justify", fontSize: "12px" }}>
+        *Silahkan untuk konfirmasi nama dan alamat ataupun patokan tempat
+        sebelum klik pesanan selesai. Pesanan akan terhubung otomatis dengan no
+        WhatsApp kamu.
       </p>
       <div className="d-flex justify-content-around my-3">
         <input
           className="p-1 border border-1 rounded-2"
           placeholder="nama"
-          style={{ width: "70%" }}
+          style={{ width: "100px" }}
           onChange={(e) => setNama(e.target.value)}
         />
 
         <input
           className="p-1 border border-1 rounded-2"
           placeholder="alamat/patokan tempat"
-          style={{ width: "70%" }}
+          style={{ width: "210px" }}
           onChange={(e) => setAlamat(e.target.value)}
         />
       </div>
+      <div>
+        <input
+          className="p-1 mb-4 border border-1 rounded-2"
+          type="text"
+          style={{ width: "100%" }}
+          placeholder="Ketrangan: Mienya rasa soto dan rendang..."
+          onChange={(e) => setKeterangan(e.target.value)}
+        />
+      </div>
       <a
-        href={`https://wa.me/6285772390154?text=${JSON.stringify(
-          DataPemesanan
-        )}`}
+        href={`https://wa.me/6285772390154?text=Nama:${nama} alamat:${alamat}  keterangan: ${keterangan}
+        pesanan: ${JSON.stringify(pesanan)}`}
       >
         <button
           className="btn btn-success p-2"
@@ -107,6 +115,7 @@ const Pesanan = () => {
           Belanja lagi
         </button>
       </Link>
+      <Kontak />
     </div>
   );
 };

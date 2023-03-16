@@ -50,7 +50,7 @@ const Produk = () => {
       <div className="row justify-content-around">
         {Data.map((value) => (
           <div className="col-md-3 col-6 my-2">
-            <Link to={value.tautan}>
+            <Link to={value.tautan} style={{ textDecoration: "none" }}>
               <div
                 className="border border-2 rounded-3 mx-2"
                 style={{ backgroundColor: "purple", color: "white" }}

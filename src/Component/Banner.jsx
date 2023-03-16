@@ -17,7 +17,6 @@ const Banner = () => {
               lineHeight: "40px",
               textShadow: "4px 2px black",
               color: "#FFCC00",
-              
             }}
           >
             Warunk
@@ -55,13 +54,13 @@ const Banner = () => {
             </button>
           </a>
         </div>
-        <div className="col-md py-5">
+        <div className="col-md pb-5 pt-2">
           <div className="d-flex justify-content-around">
             <img
-              src="./assets/banner-3.png"
+              src="./assets/Banner.png"
               alt=" "
               style={{ width: "85%" }}
-              className="mx-5"
+              className="mx-1"
             />
           </div>
         </div>
