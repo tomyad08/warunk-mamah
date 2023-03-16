@@ -17,21 +17,33 @@ const Produk = () => {
     },
     {
       id: 2,
+      nama: "Sayur & Daging",
+      foto: "./assets/sayur&daging.webp",
+      tautan: "./sayur&daging",
+    },
+    {
+      id: 3,
       nama: "Alat Tulis",
       foto: "./assets/alatTulis.jpg",
       tautan: "./alat-tulis",
     },
     {
-      id: 3,
-      nama: "Cemilan",
-      foto: "./assets/cemilan.jpg",
-      tautan: "./cemilan",
+      id: 4,
+      nama: "Kebersihan",
+      foto: "./assets/bersih.webp",
+      tautan: "./kebersihan",
     },
     {
-      id: 4,
-      nama: "Padat Karya",
-      foto: "./assets/tong.jpg",
-      tautan: "./padat-karya",
+      id: 5,
+      nama: "Kesehatan",
+      foto: "./assets/obat-obatan.webp",
+      tautan: "./kesehatan",
+    },
+    {
+      id: 6,
+      nama: "Elektronik",
+      foto: "./assets/elektronik.webp",
+      tautan: "./elektronika",
     },
   ];
   return (
@@ -49,7 +61,7 @@ const Produk = () => {
       </p>
       <div className="row justify-content-around">
         {Data.map((value) => (
-          <div className="col-md-3 col-6 my-2">
+          <div className="col-md-3 col-6 my-2" key={value.id}>
             <Link to={value.tautan} style={{ textDecoration: "none" }}>
               <div
                 className="border border-2 rounded-3 mx-2"

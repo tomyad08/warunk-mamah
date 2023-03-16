@@ -4,6 +4,9 @@ export const productSlice = createSlice({
   name: "product",
   initialState: {
     sembako: [],
+    elektronika: [],
+    kesehatan: [],
+    kebersihan: [],
     alatTulis: [],
     orders: [],
   },
@@ -11,8 +14,17 @@ export const productSlice = createSlice({
     addSembako: (state, action) => {
       state.sembako.push(action.payload);
     },
+    addElektronika: (state, action) => {
+      state.elektronika.push(action.payload);
+    },
     addAlatTulis: (state, action) => {
       state.alatTulis.push(action.payload);
+    },
+    addKesehatan: (state, action) => {
+      state.kesehatan.push(action.payload);
+    },
+    addKebersihan: (state, action) => {
+      state.kebersihan.push(action.payload);
     },
     addOrders: (state, action) => {
       let arr = state.orders;
@@ -24,6 +36,13 @@ export const productSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addSembako, addOrders, addAlatTulis } = productSlice.actions;
+export const {
+  addSembako,
+  addOrders,
+  addAlatTulis,
+  addElektronika,
+  addKesehatan,
+  addKebersihan,
+} = productSlice.actions;
 
 export default productSlice.reducer;

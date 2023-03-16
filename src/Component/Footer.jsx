@@ -16,11 +16,11 @@ const Kontak = () => {
           className="col-md my-1"
           style={{ fontFamily: "'Signika Negative', sans-serif" }}
         >
-          <h5>Jl. Imam Bonjol No.5</h5>
+          <h5>Gg. Rajawali III</h5>
           <p style={{ lineHeight: "8px" }}>Kec. Babakan, Kab. Cirebon</p>
           <p style={{ lineHeight: "8px" }}>Kode Pos 45191</p>
           <p style={{ lineHeight: "8px" }}>
-            <strong>WhatsApp: 081543344766</strong>
+            <strong>WhatsApp: 085772390154</strong>
           </p>
         </div>
 
