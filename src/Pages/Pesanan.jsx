@@ -90,7 +90,7 @@ const Pesanan = () => {
         />
       </div>
       <a
-        href={`https://wa.me/6285772390154?text=Nama: ${nama} alamat: ${alamat}  keterangan: ${keterangan}
+        href={`https://wa.me/628991563674?text=Nama: ${nama} alamat: ${alamat}  keterangan: ${keterangan}
         pesanan: 
         ${JSON.stringify(pesanan)} harga total=${sum}
         `}

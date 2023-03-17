@@ -89,7 +89,7 @@ const App = () => {
           <p className="float-end me-2" onClick={() => setKondisi(false)}>
             X
           </p>
-          <a href={`https://wa.me/6285772390154`}>
+          <a href={`https://wa.me/628991563674`}>
             <img src="./assets/WA.png" alt=" " width="100px" />
           </a>
           <p
