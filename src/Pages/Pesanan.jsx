@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Kontak from "../Component/Footer";
+import NumberWithCommas from "../utils/currency";
 
 const Pesanan = () => {
   const products = useSelector((state) => state.product.orders);
@@ -47,16 +48,16 @@ const Pesanan = () => {
               </div>
 
               <div className="col">
-                <p className="float-end" key={value.id}>
-                  Rp. {value.total}
-                </p>
+                <h6 className="float-end" key={value.id}>
+                  Rp. {NumberWithCommas(value.total)}
+                </h6>
               </div>
             </div>
           </>
         ))}
         <div className="px-2 mt-3">
           <h4>Total Pembayaran:</h4>
-          <h5>Rp. {sum}</h5>
+          <h5>Rp. {NumberWithCommas(sum)}</h5>
         </div>
       </div>
       <p style={{ textAlign: "justify", fontSize: "12px" }}>
@@ -66,14 +67,14 @@ const Pesanan = () => {
       </p>
       <div className="d-flex justify-content-around my-3">
         <input
-          className="p-1 border border-1 rounded-2"
+          className="p-2 border border-1 rounded-2"
           placeholder="nama"
           style={{ width: "100px" }}
           onChange={(e) => setNama(e.target.value)}
         />
 
         <input
-          className="p-1 border border-1 rounded-2"
+          className="p-2 border border-1 rounded-2"
           placeholder="alamat/patokan tempat"
           style={{ width: "210px" }}
           onChange={(e) => setAlamat(e.target.value)}
@@ -81,16 +82,18 @@ const Pesanan = () => {
       </div>
       <div>
         <input
-          className="p-1 mb-4 border border-1 rounded-2"
+          className="p-2 mb-4 border border-1 rounded-2"
           type="text"
           style={{ width: "100%" }}
-          placeholder="Ketrangan: Mienya rasa soto dan rendang..."
+          placeholder="Keterangan: Mienya rasa soto dan rendang..."
           onChange={(e) => setKeterangan(e.target.value)}
         />
       </div>
       <a
-        href={`https://wa.me/6285772390154?text=Nama:${nama} alamat:${alamat}  keterangan: ${keterangan}
-        pesanan: ${JSON.stringify(pesanan)}`}
+        href={`https://wa.me/6285772390154?text=Nama: ${nama} alamat: ${alamat}  keterangan: ${keterangan}
+        pesanan: 
+        ${JSON.stringify(pesanan)} harga total=${sum}
+        `}
       >
         <button
           className="btn btn-success p-2"

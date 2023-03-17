@@ -13,6 +13,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#gambar {
+  border-radius: 0 0 0 40px;
+}
+
 #gambar:hover {
   transform: scale(1.01);
 }

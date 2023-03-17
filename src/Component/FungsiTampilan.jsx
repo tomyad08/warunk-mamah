@@ -4,11 +4,13 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { addOrders } from "../Lib/ProductSlice";
 import Swal from "sweetalert2";
+import NumberWithCommas from "../utils/currency";
 
 const Fungsi = (props) => {
   const [data, setData] = useState(" ");
   const [show, setShow] = useState(false);
   const [count, setCount] = useState(1);
+  const [nama, setNama] = useState(" ");
 
   const dispatch = useDispatch();
 
@@ -17,7 +19,6 @@ const Fungsi = (props) => {
   }
 
   const Data = props.props;
-
   const handleShow = (value) => {
     setData(value);
     setShow(true);
@@ -45,9 +46,35 @@ const Fungsi = (props) => {
 
   return (
     <div className="container-fluid">
+      <div className="d-flex justify-content-center mb-5">
+        <input
+          onChange={(e) => setNama(e.target.value)}
+          style={{ width: "50%", borderRadius: "10px 0 0 10px " }}
+          className="border border-0 p-2"
+          placeholder=" Mau cari apa?"
+        />
+
+        <div
+          className="p-1 border border-0 "
+          style={{
+            backgroundColor: "white",
+            color: "white",
+            width: "40px",
+            borderRadius: "0 10px 10px 0 ",
+          }}
+        >
+          <img src="./assets/magnifier.png" alt=" " width="30px" />
+        </div>
+      </div>
       {Data ? (
         <div className="row justify-content-center">
-          {Data.map((value) => (
+          {Data.filter((value) => {
+            if (nama === " ") {
+              return value;
+            } else if (value.tagging.includes(nama.toLowerCase())) {
+              return value;
+            }
+          }).map((value) => (
             <div
               className="col-md-2 col-5 mx-1 "
               onClick={() => handleShow(value)}
@@ -78,7 +105,7 @@ const Fungsi = (props) => {
                     textAlign: "center",
                   }}
                 >
-                  Rp. {value.harga}/pcs
+                  Rp. {NumberWithCommas(value.harga)}/pcs
                 </p>
               </div>
             </div>
