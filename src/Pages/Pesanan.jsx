@@ -31,7 +31,9 @@ const Pesanan = () => {
             <>
               <div style={{ display: "none" }}>
                 {pesanan.push(
-                  `_Pesan=_ ${value.nama}, _Jumlah=_ ${value.jumlah} pcs, _Total=_ Rp.${value.total} ||`
+                  `Pesan= ${value.nama}, Jumlah= ${
+                    value.jumlah
+                  } pcs, Total= Rp.${NumberWithCommas(value.total)}_____`
                 )}
               </div>
               <div className="row px-2 justify-content-around">
@@ -93,9 +95,11 @@ const Pesanan = () => {
         <a
           href={`https://wa.me/628991563674?text= *Nama:* ${nama} 
         *Alamat:* ${alamat} 
-        *Keterangan:* ${keterangan}                                       
+        *Keterangan:* ${keterangan}
+        *Harga total=*Rp. ${NumberWithCommas(
+          sum
+        )} ----------------------------------------------                                      
         ${JSON.stringify(pesanan)}                                  
-        *Harga total=* ${sum}
         `}
         >
           <button

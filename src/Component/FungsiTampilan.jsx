@@ -44,6 +44,7 @@ const Fungsi = (props) => {
       confirmButtonText: "Mantap",
     });
     setShow(false);
+    setCount(0);
   };
   const hargaTotal = count * data.harga;
 
