@@ -5,9 +5,11 @@ import { useDispatch } from "react-redux";
 import { addOrders } from "../Lib/ProductSlice";
 import Swal from "sweetalert2";
 import NumberWithCommas from "../utils/currency";
+import BottomPesanan from "./BottomPesanan";
 
 const Fungsi = (props) => {
   const [data, setData] = useState(" ");
+  const [kondisi, setKondisi] = useState(false);
   const [show, setShow] = useState(false);
   const [count, setCount] = useState(1);
   const [nama, setNama] = useState(" ");
@@ -34,6 +36,7 @@ const Fungsi = (props) => {
       total: hargaTotal,
     };
     dispatch(addOrders(datas));
+    setKondisi(true);
     Swal.fire({
       title: "Pesanan Tersimpan",
       text: "Untuk melihat pesanan kamu, silahkan klik logo keranjang yang ada di bagian pojok kanan atas ya.",
@@ -81,7 +84,7 @@ const Fungsi = (props) => {
               key={value.id}
             >
               <div
-                className="border border-0 rounded-2 mb-2"
+                className="border border-0 rounded-0 mb-2"
                 style={{
                   zIndex: "4",
                   backgroundColor: "#ECF2FF",
@@ -89,7 +92,7 @@ const Fungsi = (props) => {
                 }}
               >
                 <img src={value.foto} alt=" " width="100%" id="gambar" />
-                <h5
+                <h6
                   style={{
                     fontFamily: "'Signika Negative', sans-serif",
                     lineHeight: "25px",
@@ -97,7 +100,7 @@ const Fungsi = (props) => {
                   }}
                 >
                   {value.nama}
-                </h5>
+                </h6>
                 <p
                   style={{
                     fontFamily: "'Signika Negative', sans-serif",
@@ -146,6 +149,7 @@ const Fungsi = (props) => {
       ) : (
         <h1>Loading ...</h1>
       )}
+      {kondisi && <BottomPesanan />}
     </div>
   );
 };

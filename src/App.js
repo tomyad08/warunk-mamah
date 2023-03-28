@@ -82,24 +82,28 @@ const App = () => {
         <div
           style={{
             position: "fixed",
-            bottom: "8px",
+            bottom: "90px",
             right: "8px",
           }}
         >
           <p className="float-end me-2" onClick={() => setKondisi(false)}>
             X
           </p>
-          <a href={`https://wa.me/628991563674`}>
-            <img src="./assets/WA.png" alt=" " width="100px" />
-          </a>
-          <p
-            style={{
-              backgroundColor: "white",
-              padding: "5px 5px 5px 5px",
-              borderRadius: "10px",
-            }}
-          >
-            <strong>Butuh bantuan?</strong>
+          <div className="float-end">
+            <a href={`https://wa.me/628991563674`}>
+              <img src="./assets/WA.png" alt=" " width="80px" />
+            </a>
+          </div>
+          <p>
+            <strong
+              style={{
+                backgroundColor: "white",
+                padding: "5px 5px 5px 5px",
+                borderRadius: "10px",
+              }}
+            >
+              Butuh bantuan?
+            </strong>
           </p>
         </div>
       )}

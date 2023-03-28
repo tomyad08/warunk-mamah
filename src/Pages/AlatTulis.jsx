@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Papa from "papaparse";
 import { addAlatTulis } from "../Lib/ProductSlice";
@@ -6,6 +6,7 @@ import Fungsi from "../Component/FungsiTampilan";
 
 const AlatTulis = () => {
   const products = useSelector((state) => state.product.alatTulis[0]);
+  const [kondisi, setKondisi] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {

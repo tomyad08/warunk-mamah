@@ -24,7 +24,7 @@ const Banner = () => {
           <h1
             style={{
               fontFamily: "'Luckiest Guy', cursive",
-              fontSize: "70px",
+              fontSize: "75px",
               lineHeight: "40px",
               textShadow: "4px 2px black",
               color: "#FFCC00",
