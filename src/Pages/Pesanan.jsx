@@ -126,18 +126,20 @@ const Pesanan = () => {
               Yuk, isi formulirnya dulu.
             </p>
           )}
-          <div className="d-flex justify-content-around mb-1">
+          <div className="d-flex justify-content-between mb-1">
             <input
               className="p-2 border border-1 rounded-2"
               placeholder="nama"
-              style={{ width: "100px" }}
+              type="text"
+              style={{ width: "90px" }}
               onChange={(e) => setNama(e.target.value)}
             />
 
             <input
               className="p-2 border border-1 rounded-2"
+              type="text"
               placeholder="alamat/patokan tempat"
-              style={{ width: "210px" }}
+              style={{ width: "190px" }}
               onChange={(e) => setAlamat(e.target.value)}
             />
           </div>
@@ -159,16 +161,7 @@ const Pesanan = () => {
               onChange={(e) => setKeterangan(e.target.value)}
             />
           </div>
-          {/* <a
-            href={`https://wa.me/628991563674?text= *Nama:* ${nama} 
-        *Alamat:* ${alamat} 
-        *Keterangan:* ${keterangan}
-        *Harga total=*Rp. ${NumberWithCommas(
-          sum
-        )} ----------------------------------------------                                      
-        ${JSON.stringify(pesanan)}                                  
-        `}
-          > */}
+
           <button
             className="btn btn-success p-2"
             style={{

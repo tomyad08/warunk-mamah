@@ -6,12 +6,12 @@ const Kontak = () => {
     <div
       className="container-fluid"
       style={{
-        background: "linear-gradient(#A31ACB,purple)",
+        backgroundColor: "purple",
         color: "white",
       }}
       id="kontak"
     >
-      <div className="row justify-content around px-1 py-5 text-center">
+      <div className="row justify-content-center text-center py-3">
         <div
           className="col-md my-1"
           style={{ fontFamily: "'Signika Negative', sans-serif" }}
@@ -25,18 +25,20 @@ const Kontak = () => {
         </div>
 
         <div className="col-md my-1">
-          <a href="#produk" style={{ textDecoration: "none" }}>
-            <button
-              style={{
-                fontFamily: "'Signika Negative', sans-serif",
-                backgroundColor: "#FF78F0",
-                color: "black",
-              }}
-              className="btn px-5 py-2 border border-0 rounded-2 fs-4"
-            >
-              Explore
-            </button>
-          </a>
+          <Link to="/">
+            <a href="#produk" style={{ textDecoration: "none" }}>
+              <button
+                style={{
+                  fontFamily: "'Signika Negative', sans-serif",
+                  backgroundColor: "#FF78F0",
+                  color: "black",
+                }}
+                className="btn px-5 py-2 border border-0 rounded-2 fs-4"
+              >
+                Explore
+              </button>
+            </a>
+          </Link>
         </div>
 
         <div className="col-md">

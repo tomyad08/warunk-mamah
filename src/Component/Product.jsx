@@ -64,7 +64,7 @@ const Produk = () => {
           <div className="col-md-3 col-6" key={value.id}>
             <Link to={value.tautan} style={{ textDecoration: "none" }}>
               <div
-                className="border border-2 rounded-3 "
+                className="border border-2 rounded-3 pb-1"
                 style={{
                   backgroundColor: "purple",
                   color: "white",

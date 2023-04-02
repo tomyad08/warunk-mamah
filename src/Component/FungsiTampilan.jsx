@@ -54,14 +54,14 @@ const Fungsi = (props) => {
         <input
           onChange={(e) => setNama(e.target.value)}
           style={{ width: "50%", borderRadius: "10px 0 0 10px " }}
-          className="border border-0 p-2"
+          className="border border-2 p-2"
           placeholder=" Mau cari apa?"
         />
 
         <div
-          className="p-1 border border-0 "
+          className="p-1 border border-2 "
           style={{
-            backgroundColor: "white",
+            backgroundColor: "#ECF2FF",
             color: "white",
             width: "40px",
             borderRadius: "0 10px 10px 0 ",
@@ -119,7 +119,10 @@ const Fungsi = (props) => {
               <Modal.Title className="fs-1">{data.nama}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <h6 className="fs-3">
+              <h6
+                className="fs-3"
+                style={{ fontFamily: "'Signika Negative', sans-serif" }}
+              >
                 Jumlah:
                 <span
                   className="mx-2 px-3 fs-3 border border-1 rounded-2"
@@ -135,14 +138,24 @@ const Fungsi = (props) => {
                   +
                 </span>
               </h6>
-              <h4>Harga Total: Rp. {hargaTotal} </h4>
+              <h4 style={{ fontFamily: "'Signika Negative', sans-serif" }}>
+                Harga Total: Rp. {NumberWithCommas(hargaTotal)}{" "}
+              </h4>
             </Modal.Body>
             <Modal.Footer>
-              <Button variant="danger" onClick={handleClose1}>
-                Close
+              <Button
+                variant="danger"
+                onClick={handleClose1}
+                style={{ fontFamily: "'Signika Negative', sans-serif" }}
+              >
+                Tutup
               </Button>
-              <Button variant="success" onClick={handleClose}>
-                Save Changes
+              <Button
+                variant="success"
+                onClick={handleClose}
+                style={{ fontFamily: "'Signika Negative', sans-serif" }}
+              >
+                Simpan
               </Button>
             </Modal.Footer>
           </Modal>
