@@ -61,7 +61,7 @@ const Produk = () => {
       </p>
       <div className="row justify-content-center">
         {Data.map((value) => (
-          <div className="col-md-3 col-6 my-2" key={value.id}>
+          <div className="col-md-3 col-6" key={value.id}>
             <Link to={value.tautan} style={{ textDecoration: "none" }}>
               <div
                 className="border border-2 rounded-3 "

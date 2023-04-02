@@ -32,6 +32,11 @@ export const productSlice = createSlice({
       const uniqueArr = [...new Set(arr)];
       state.orders = uniqueArr;
     },
+    deleteOrders: (state, action) => {
+      state.orders = state.orders.filter(
+        (order) => order.id !== action.payload
+      );
+    },
   },
 });
 
@@ -43,6 +48,7 @@ export const {
   addElektronika,
   addKesehatan,
   addKebersihan,
+  deleteOrders,
 } = productSlice.actions;
 
 export default productSlice.reducer;

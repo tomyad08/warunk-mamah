@@ -39,7 +39,7 @@ const Fungsi = (props) => {
     setKondisi(true);
     Swal.fire({
       title: "Pesanan Tersimpan",
-      text: "Untuk melihat pesanan kamu, silahkan klik logo keranjang yang ada di bagian pojok kanan atas ya.",
+      // text: "Untuk melihat pesanan kamu, silahkan klik logo keranjang yang ada di bagian pojok kanan atas ya.",
       icon: "success",
       confirmButtonText: "Mantap",
     });
@@ -71,7 +71,7 @@ const Fungsi = (props) => {
         </div>
       </div>
       {Data ? (
-        <div className="row justify-content-center">
+        <div className="row">
           {Data.filter((value) => {
             if (nama === " ") {
               return value;
@@ -80,12 +80,12 @@ const Fungsi = (props) => {
             }
           }).map((value) => (
             <div
-              className="col-md-2 col-5 mx-1 "
+              className="col-md-2 col-6 "
               onClick={() => handleShow(value)}
               key={value.id}
             >
               <div
-                className="border border-0 rounded-0 mb-2"
+                className="border border-0 rounded-2 mb-2"
                 style={{
                   zIndex: "4",
                   backgroundColor: "#ECF2FF",
