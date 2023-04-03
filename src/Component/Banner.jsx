@@ -10,28 +10,30 @@ const Banner = () => {
     <div className="container-fluid">
       <div className="row py-5" data-aos="fade-up">
         <div className="col-md text-center my-3">
-          <h4
-            style={{
-              fontFamily: "'Luckiest Guy', cursive",
-              fontSize: "40px",
-              lineHeight: "40px",
-              textShadow: "4px 2px black",
-              color: "#FFCC00",
-            }}
-          >
-            Warunk
-          </h4>
-          <h1
-            style={{
-              fontFamily: "'Luckiest Guy', cursive",
-              fontSize: "75px",
-              lineHeight: "40px",
-              textShadow: "4px 2px black",
-              color: "#FFCC00",
-            }}
-          >
-            Ibu Titin
-          </h1>
+          <header>
+            <h4
+              style={{
+                fontFamily: "'Luckiest Guy', cursive",
+                fontSize: "40px",
+                lineHeight: "40px",
+                textShadow: "4px 2px black",
+                color: "#FFCC00",
+              }}
+            >
+              Warunk
+            </h4>
+            <h1
+              style={{
+                fontFamily: "'Luckiest Guy', cursive",
+                fontSize: "75px",
+                lineHeight: "40px",
+                textShadow: "4px 2px black",
+                color: "#FFCC00",
+              }}
+            >
+              Ibu Titin
+            </h1>
+          </header>
           <p
             style={{
               fontFamily: "'Signika Negative', sans-serif",

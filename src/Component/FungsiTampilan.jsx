@@ -93,24 +93,34 @@ const Fungsi = (props) => {
                 }}
               >
                 <img src={value.foto} alt=" " width="100%" id="gambar" />
-                <h6
-                  style={{
-                    fontFamily: "'Signika Negative', sans-serif",
-                    lineHeight: "25px",
-                    textAlign: "center",
-                  }}
-                >
-                  {value.nama}
-                </h6>
-                <p
-                  style={{
-                    fontFamily: "'Signika Negative', sans-serif",
-                    lineHeight: "5px",
-                    textAlign: "center",
-                  }}
-                >
-                  Rp. {NumberWithCommas(value.harga)}/pcs
-                </p>
+                <figcaption>
+                  <h6
+                    style={{
+                      fontFamily: "'Signika Negative', sans-serif",
+                      lineHeight: "25px",
+                      textAlign: "center",
+                    }}
+                  >
+                    {value.nama}
+                  </h6>
+                  <p
+                    style={{
+                      fontFamily: "'Signika Negative', sans-serif",
+                      lineHeight: "5px",
+                      textAlign: "center",
+                    }}
+                  >
+                    Rp. {NumberWithCommas(value.harga)}/pcs
+                  </p>
+                </figcaption>
+                <div className="d-flex justify-content-center">
+                  <button
+                    className="btn btn-success border border-0 rounded-5 my-2 px-4"
+                    style={{ fontSize: "12px" }}
+                  >
+                    + Keranjang
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -119,8 +129,12 @@ const Fungsi = (props) => {
               <Modal.Title className="fs-1">{data.nama}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              <details>
+                <summary>Lihat Detail Produk</summary>
+                something small than everything
+              </details>
               <h6
-                className="fs-3"
+                className="fs-3 mt-2"
                 style={{ fontFamily: "'Signika Negative', sans-serif" }}
               >
                 Jumlah:
