@@ -27,9 +27,20 @@ code {
 #sandwich {
   display: none;
 }
+#produkCard {
+  height: "100px";
+  overflow: "hidden";
+}
 @media screen and (max-width: 600px) {
   #menu {
     display: none;
+  }
+  #produkCard {
+    height: 50px;
+    overflow: "hidden";
+  }
+  #ukuranFont {
+    font-size: 12px;
   }
   #sandwich {
     display: block;
