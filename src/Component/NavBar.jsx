@@ -20,13 +20,13 @@ const Navibar = () => {
             onClick={() => setKondisi(!kondisi)}
           />
         </div>
-        <div className="col-7 pt-2">
+        <div className="col-7 pt-3">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <h2
               style={{
                 fontFamily: "'Signika Negative', sans-serif",
                 fontSize: "20px",
-                marginLeft: "30px",
+                marginLeft: "35px",
                 paddingTop: "10px",
               }}
             >

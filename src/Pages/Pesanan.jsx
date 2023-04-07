@@ -14,14 +14,25 @@ const Pesanan = () => {
   const [keterangan, setKeterangan] = useState(" ");
   const [noWA, setNoWA] = useState(" ");
   const [valid, setValid] = useState(false);
+  const [pengiriman, setPengiriman] = useState(" ");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  console.log(pengiriman);
 
   const numbers = products.map((data) => data.total);
   const sum = numbers.reduce(function (result, item) {
     return result + item;
   }, 0);
+
+  let hargaAkhir = [];
+  if (pengiriman === " ") {
+    hargaAkhir = sum + 1000;
+  } else if (pengiriman === "regular") {
+    hargaAkhir = sum + 1000;
+  } else if (pengiriman === "express") {
+    hargaAkhir = sum + 7000;
+  }
 
   let pesanan = [];
 
@@ -44,6 +55,8 @@ const Pesanan = () => {
       setValid(true);
     } else if (noWA === " ") {
       setValid(true);
+    } else if (pengiriman === " ") {
+      setValid(true);
     } else {
       axios.post("https://sheetdb.io/api/v1/lx1xvq451504f", data);
       Swal.fire({
@@ -58,15 +71,18 @@ const Pesanan = () => {
 
   return (
     <div>
+      <div style={{ backgroundColor: "purple", height: "200px" }}></div>
       <div
-        className="container-fluid mb-5 pt-5"
+        className="container-fluid pt-5"
         style={{
           fontFamily: "'Signika Negative', sans-serif",
           width: "350px",
+          position: "relative",
+          top: "-180px",
         }}
       >
         <div
-          className="p-3 border border-0 rounded-2"
+          className="p-3 border border-2 rounded-2"
           style={{ backgroundColor: "white" }}
         >
           <div>
@@ -107,7 +123,7 @@ const Pesanan = () => {
             ))}
             <div className="px-2 mt-3">
               <h4>Total Pembayaran:</h4>
-              <h5>Rp. {NumberWithCommas(sum)}</h5>
+              <h5>Rp. {NumberWithCommas(hargaAkhir)}</h5>
             </div>
           </div>
           <p style={{ textAlign: "justify", fontSize: "12px" }}>
@@ -154,11 +170,30 @@ const Pesanan = () => {
           </div>
           <div>
             <input
-              className="p-2 mb-4 border border-1 rounded-2"
+              className="p-2 mb-1 border border-1 rounded-2"
               type="text"
               style={{ width: "100%" }}
               placeholder="Keterangan: Mienya rasa soto dan rendang..."
               onChange={(e) => setKeterangan(e.target.value)}
+            />
+          </div>
+          <div>
+            <select
+              style={{ width: "100%" }}
+              className="p-2 mb-1 border border-1 rounded-2"
+              onChange={(e) => setPengiriman(e.target.value)}
+            >
+              <option value=" ">Jenis Pengiriman</option>
+              <option value="regular">Regular (Rp. 0)</option>
+              <option value="express">Express (Rp. 6.000)</option>
+            </select>
+          </div>
+          <div>
+            <input
+              className="p-2 mb-4 border border-1 rounded-2"
+              type="text"
+              style={{ width: "100%" }}
+              value="Kantong kertas (Rp. 1.000)"
             />
           </div>
 

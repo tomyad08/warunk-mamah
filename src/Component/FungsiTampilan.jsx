@@ -6,6 +6,7 @@ import { addOrders } from "../Lib/ProductSlice";
 import Swal from "sweetalert2";
 import NumberWithCommas from "../utils/currency";
 import BottomPesanan from "./BottomPesanan";
+import { Link } from "react-router-dom";
 
 const Fungsi = (props) => {
   const [data, setData] = useState(" ");
@@ -50,12 +51,24 @@ const Fungsi = (props) => {
 
   return (
     <div className="container-fluid">
-      <div className="d-flex justify-content-center mb-5">
+      <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+        <h2
+          style={{
+            fontFamily: "'Signika Negative', sans-serif",
+            fontSize: "30px",
+            paddingTop: "10px",
+            textAlign: "center",
+          }}
+        >
+          <strong>Warunk Ibu Titin</strong>
+        </h2>
+      </Link>
+      <div className="d-flex justify-content-center mt-2 mb-4 ">
         <input
           onChange={(e) => setNama(e.target.value)}
-          style={{ width: "50%", borderRadius: "10px 0 0 10px " }}
+          style={{ width: "70%", borderRadius: "10px 0 0 10px " }}
           className="border border-2 p-2"
-          placeholder=" Mau cari apa?"
+          placeholder="Kamu mau cari apa?"
         />
 
         <div
@@ -85,7 +98,7 @@ const Fungsi = (props) => {
               key={value.id}
             >
               <div
-                className="border border-0 rounded-2 mb-2"
+                className="border border-2 rounded-2 mb-2"
                 style={{
                   zIndex: "4",
                   backgroundColor: "#ECF2FF",

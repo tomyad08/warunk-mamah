@@ -14,24 +14,8 @@ const App = () => {
   const [kondisi, setKondisi] = useState(true);
   return (
     <div>
-      <div
-        style={{
-          position: "relative",
-          top: "70px",
-          backgroundColor: "#E3DFFD",
-        }}
-      >
+      <div>
         <BrowserRouter>
-          <div
-            style={{
-              position: "fixed",
-              width: "100%",
-              top: "-2px",
-              zIndex: "1",
-            }}
-          >
-            <Navibar />
-          </div>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route
