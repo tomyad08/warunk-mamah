@@ -75,7 +75,7 @@ const App = () => {
           </p>
           <div className="float-end">
             <a href={`https://wa.me/628991563674`}>
-              <img src="./assets/WA.png" alt=" " width="80px" />
+              <img src="./assets/WA.png" alt=" " width="70px" />
             </a>
           </div>
           <p>
@@ -84,6 +84,7 @@ const App = () => {
                 backgroundColor: "white",
                 padding: "5px 5px 5px 5px",
                 borderRadius: "10px",
+                fontSize: "12px",
               }}
             >
               Butuh bantuan?

@@ -86,7 +86,9 @@ const Pesanan = () => {
           style={{ backgroundColor: "white" }}
         >
           <div>
-            <h1 className="text-center">Pesanan</h1>
+            <h1 className="text-center">
+              <strong>Warunk Ibu Titin</strong>
+            </h1>
             {products.map((value) => (
               <>
                 <div style={{ display: "none" }}>

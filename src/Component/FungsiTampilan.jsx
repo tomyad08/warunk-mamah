@@ -142,10 +142,6 @@ const Fungsi = (props) => {
               <Modal.Title className="fs-1">{data.nama}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <details>
-                <summary>Lihat Detail Produk</summary>
-                something small than everything
-              </details>
               <h6
                 className="fs-3 mt-2"
                 style={{ fontFamily: "'Signika Negative', sans-serif" }}
