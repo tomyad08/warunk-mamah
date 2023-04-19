@@ -5,16 +5,18 @@
     {
       "src": "logoApps.png",
       "type": "image/png",
-      "sizes": "265x217"
+      "sizes": "265x217",
+      "purpose": "any"
     },
     {
       "src": "logoApps.png",
       "type": "image/png",
-      "sizes": "365x317"
+      "sizes": "365x317",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "purple",
   "background_color": "purple"
 }
