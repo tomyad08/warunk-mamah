@@ -3,6 +3,12 @@
   "name": "Warunk Ibu Titin",
   "icons": [
     {
+      "src": "favicon.png",
+      "type": "image/png",
+      "sizes": "64x52",
+      "purpose": "any"
+    },
+    {
       "src": "logoApps.png",
       "type": "image/png",
       "sizes": "265x217",
@@ -17,6 +23,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
+  "description": "Solusi belanja praktis untuk kamu yang sibuk",
   "theme_color": "purple",
   "background_color": "purple"
 }
