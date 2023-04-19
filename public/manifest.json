@@ -11,6 +11,11 @@
       "src": "logoApps.png",
       "type": "image/png",
       "sizes": "265x217"
+    },
+    {
+      "src": "logoApps.png",
+      "type": "image/png",
+      "sizes": "365x317"
     }
   ],
   "start_url": ".",
