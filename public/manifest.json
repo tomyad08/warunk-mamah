@@ -3,19 +3,19 @@
   "name": "Warunk Ibu Titin",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "./favicon.png",
       "type": "image/png",
       "sizes": "64x52",
       "purpose": "any"
     },
     {
-      "src": "logoApps.png",
+      "src": "./logoApps.png",
       "type": "image/png",
       "sizes": "265x217",
       "purpose": "any"
     },
     {
-      "src": "logoApps.png",
+      "src": "./logoApps.png",
       "type": "image/png",
       "sizes": "365x317",
       "purpose": "any"
